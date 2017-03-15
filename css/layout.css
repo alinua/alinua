@@ -1,0 +1,135 @@
+/**********/
+/* NAVBAR */
+/**********/
+
+nav.navbar {
+    border-radius: 0px;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: inherit;
+}
+
+/***********/
+/* GENERAL */
+/***********/
+
+#page {
+    padding: 15px 15px 0px 15px;
+    margin-top: 35px;
+}
+
+#pageContent {
+    padding-top: 10px;
+}
+
+#pageBody {
+    min-height: 90vh;
+    padding-top: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.homeEntete {
+    background-color: rgb(61, 141, 210);
+    color: white;
+    text-transform: uppercase;
+    padding: 15px 0px 20px;
+    border-radius: 3px;
+}
+
+.annonce a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+#profile {
+    position: fixed;
+    border-right: 1px solid #2b2b2b;
+    height: 100%;
+    background-color: #263949;
+    padding-top: 20px;
+}
+
+.dropdown.profile-element {
+    padding: 25px;
+}
+
+.profile-element span {
+    display: block;
+    text-align: center;
+}
+
+.dropdown-toggle {
+    margin-top: 10px;
+}
+
+span.clear {
+    color: white;
+}
+
+#connexionAction {
+    margin: 20px;
+}
+
+#recherche input {
+	height: 50px;
+}
+
+/**********/
+/*  CARD  */
+/**********/
+
+.card {
+    border: 1px solid #ccc;
+    margin: 15px;
+    margin-top: 25px;
+    transition: all 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card .card-header {
+    text-align: center;
+    background-color: #2882ad;
+    color: #cacaca;
+    padding: 10px;
+}
+
+.card .card-header .card-title {
+    text-transform: uppercase;
+    color: white;
+}
+
+.card .card-body {
+    padding: 12px;
+    color: black;
+}
+
+.card .card-footer {
+    padding: 10px;
+    background-color: #6b6b6b;
+    color: white;
+}
+
+/**********/
+/* FOOTER */
+/**********/
+
+footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #8e8e8e;
+    background-color: #ccc;
+    color: #38526d;
+    width: 100%;
+}
