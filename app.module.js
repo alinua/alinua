@@ -1,5 +1,7 @@
 angular.module('alinua', [
 	'ngRoute',
+	'satellizer',
 	'annonceList',
-	'homePage'
+	'homePage',
+	'login'
 ]);

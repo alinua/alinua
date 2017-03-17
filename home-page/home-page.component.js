@@ -3,6 +3,5 @@ angular
 	.component('homePage', {
 		templateUrl: 'home-page/home-page.html',
 		controller: function HomeController() {
-			$scope.title = "Bienvenue";
 		}	
 	});
