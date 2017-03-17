@@ -5,10 +5,13 @@ angular
 		$routeProvider
 		    .when('/', {
 		        template: '<home-page></home-page>',
-		    })  
+		    }) 
+		    .when('/erreur404', {
+		        template: '<erreur404></erreur404>',
+		    }) 
 		    .when('/annonces', {
 		        template: '<annonce-list></annonce-list>',
 		    })
-		    .otherwise({redirectTo : '/'})
+		    .otherwise({redirectTo : '/erreur404'})
 		;    
 	}]);

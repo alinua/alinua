@@ -1,5 +1,6 @@
 angular.module('alinua', [
 	'ngRoute',
 	'annonceList',
-	'homePage'
+	'homePage',
+	'erreur404'
 ]);

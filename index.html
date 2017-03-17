@@ -48,7 +48,7 @@
                                 <a href="#!/annonces">
                                     Annonces
                                 </a>
-                            </li>
+                            </li>                            
                             <li  ng-class="{'active': activePath == '/messagerie'}">
                                 <a href="#">
                                     Messagerie
@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs" id="profile">
                     <!-- Données Utilisateur -->
-                    <div class="dropdown profile-element"> 
+                    <div class="dropdown profile-element" ng-controller="userController"> 
                         <span>
                            <img alt="image" class="img-circle img-responsive" src="images/profile.jpg">
                         </span>
@@ -77,7 +77,7 @@
                                     </b>
                                 </span>
                                 <span>
-                                    Fonction
+                                    Fonction                                    
                                 </span>
                             </span>
                         </div>
@@ -122,6 +122,8 @@
         <script src="annonce-list/annonce-list.component.js"></script>
         <script src="home-page/home-page.module.js"></script>
         <script src="home-page/home-page.component.js"></script>
+        <script src="erreur404/erreur404.module.js"></script>
+        <script src="erreur404/erreur404.component.js"></script>
        
     </body>
 </html>
