@@ -1,4 +1,5 @@
 angular.module('alinua', [
 	'ngRoute',
-	'annonceList'
+	'annonceList',
+	'homePage'
 ]);
