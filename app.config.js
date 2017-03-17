@@ -14,8 +14,9 @@ angular
 		    })
 		    .when('/login', {
 		        template: '<login></login>',
-		    })+		    
+		    })	    
 		    .otherwise({redirectTo : '/erreur404'})
+	    ;
 		    
 		$authProvider.linkedin({
 			clientId: '775n9ttoxg45s6'

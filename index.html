@@ -65,24 +65,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs" id="profile">
                     <!-- Données Utilisateur -->
-                    <div class="dropdown profile-element" ng-controller="userController"> 
-                        <span>
-                           <img alt="image" class="img-circle img-responsive" src="images/profile.jpg">
-                        </span>
-                        <div data-toggle="dropdown" class="dropdown-toggle">
-                            <span class="clear"> 
-                                <span> 
-                                    <b>
-                                        Utilisateur
-                                    </b>
-                                </span>
-                                <span>
-                                    Fonction                                    
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- Profile, cv, ... -->
+                    <user-menu></user-menu>
                 </div>
 
                 <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2" id="pageContent">
@@ -128,6 +111,8 @@
         <script src="erreur404/erreur404.component.js"></script>
         <script src="login/login.module.js"></script>
         <script src="login/login.component.js"></script>
+        <script src="user-menu/user-menu.module.js"></script>
+        <script src="user-menu/user-menu.component.js"></script>
        
     </body>
 </html>

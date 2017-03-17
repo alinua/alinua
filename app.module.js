@@ -4,5 +4,6 @@ angular.module('alinua', [
 	'annonceList',
 	'homePage',
 	'erreur404',
+	'userMenu',
 	'login'
 ]);
