@@ -29,6 +29,11 @@ nav.navbar {
     padding-top: 10px;
 }
 
+#connexionActions {
+	text-align: center;
+	margin-top: 25px;
+}
+
 .title {
     text-align: center;
 }
@@ -58,21 +63,8 @@ nav.navbar {
     padding-top: 20px;
 }
 
-.dropdown.profile-element {
-    padding: 25px;
-}
-
-.profile-element span {
-    display: block;
-    text-align: center;
-}
-
 .dropdown-toggle {
     margin-top: 10px;
-}
-
-span.clear {
-    color: white;
 }
 
 #connexionAction {
@@ -120,6 +112,44 @@ span.clear {
     background-color: #6b6b6b;
     color: white;
 }
+
+/****************/
+/* Menu Profile */
+/****************/
+
+.enteteProfile {
+	max-width: 150px;
+	margin: auto;
+}
+
+.profile-element {
+	color: white;
+	text-align: center;
+}
+
+.menuVertical {
+	text-align: left;
+	margin-top: 30px;
+} 
+
+.menuVertical ul {
+	list-style: none;
+	padding-left: 15px;
+}
+
+.menuVertical a {
+	text-decoration: none;
+	color: white;
+}
+
+.menuVertical a:hover {
+	color: #337aa5;
+}
+
+.part {
+	padding-bottom: 15px;
+}
+
 
 /**********/
 /* FOOTER */

@@ -14,7 +14,10 @@ angular
 		    })
 		    .when('/login', {
 		        template: '<login></login>',
-		    })	    
+		    })
+		    .when('/profile', {
+                template: '<profile></profile>',
+            })	    
 		    .otherwise({redirectTo : '/erreur404'})
 	    ;
 		    
@@ -37,14 +40,14 @@ angular
 		
 		// LinkedIn
 		$authProvider.linkedin({
-		  url: '/auth/linkedin',
-		  authorizationEndpoint: 'https://www.linkedin.com/uas/oauth2/authorization',
-		  redirectUri: window.location.origin+'/',
-		  requiredUrlParams: ['state'],
-		  scope: ['r_emailaddress'],
-		  scopeDelimiter: ' ',
-		  state: 'STATE',
-		  oauthType: '2.0',
-		  popupOptions: { width: 527, height: 582 }
+			url: '/auth/linkedin',
+			authorizationEndpoint: 'https://www.linkedin.com/uas/oauth2/authorization',
+			redirectUri: window.location.origin+'/',
+			requiredUrlParams: ['state'],
+			scope: ['r_emailaddress'],
+			scopeDelimiter: ' ',
+			state: 'STATE',
+			oauthType: '2.0',
+			popupOptions: { width: 527, height: 582 }
 		});
 	}]);
