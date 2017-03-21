@@ -6,5 +6,6 @@ angular.module('alinua', [
 	'erreur404',
 	'userMenu',
 	'profile',
-	'login'
+	'login',
+	'userList'
 ]);
