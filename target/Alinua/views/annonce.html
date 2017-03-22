@@ -1,0 +1,34 @@
+<div class="col-lg-12"> 
+    <div class="row" ng-show="loading">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <div class="row" ng-hide="loading">
+        <div class="col-lg-8 col-lg-offset-2 title">
+            <h2>
+                {{annonce.title}}
+            </h2>
+        </div>
+
+        <div class="col-lg-8 col-lg-offset-2">
+            <h4>
+                {{annonce.fonction}}
+            </h4>
+            <hr>
+                {{annonce.description}}
+            <hr>
+            <p>
+                Compétences requises :
+                <ul>
+                    <li ng-repeat="skill in annonce.skills">
+                        {{skill}}
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Salaire : {{annonce.salary}} <i class="fa fa-money" aria-hidden="true"></i>
+            </p>
+        </div>
+    </div>
+</div>

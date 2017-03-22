@@ -5,13 +5,21 @@
 	      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-	<display-name>AlinuaProg</display-name>
+	<display-name>Alinua</display-name>
+	
+	<!-- 
+	 <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/parseProperties.xml
+</param-value>
+  </context-param>
+   -->
 
 
 	  <filter>
 		<filter-name>struts2</filter-name>
 		<filter-class>
-		 org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+		 org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter
 		</filter-class>
 	  </filter>
 
@@ -21,7 +29,7 @@
 	  </filter-mapping>
 	  
 	<welcome-file-list>
-		<welcome-file>/pages/index.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
 

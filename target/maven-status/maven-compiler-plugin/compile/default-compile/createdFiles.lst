@@ -1,5 +1,9 @@
-com/m1Info/user/UserImpl.class
-com/m1Info/user/User.class
-com/m1Info/action/UserSpringAction.class
-com/m1Info/listener/HibernateListener.class
-com/m1Info/model/userModel.class
+com/m1Info/bean/JobAdvert.class
+com/m1Info/action/UserAction.class
+com/m1Info/dao/JobAdvertDao.class
+com/m1Info/action/SpringAction.class
+com/m1Info/dao/UserDaoImpl.class
+com/m1Info/action/JobAdvertAction.class
+com/m1Info/bean/User.class
+com/m1Info/dao/JobAdvertDaoImpl.class
+com/m1Info/dao/UserDao.class

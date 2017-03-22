@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 Julai 2010 11:40:18 AM by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+    <class name="com.m1Info.bean.JobAdvert"
+		table="JOBADVERT" catalog="Alinua">
+		
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="title" type="string">
+            <column name="title" not-null="true" />
+        </property>
+        
+        <property name="location" type="string">
+            <column name="location" length="45" not-null="true" />
+        </property>
+        
+        <property name="industry" type="string">
+            <column name="industry" length="45" not-null="true" />
+        </property>
+        
+        <property name="date" type="string">
+            <column name="date" length="45" not-null="true" />
+        </property>
+        
+        <property name="skills" type="string">
+            <column name="skills" length="45" not-null="true" />
+        </property>
+        
+        <property name="description" type="string">
+            <column name="description" length="45" not-null="true" />
+        </property>
+        
+        <property name="degree" type="string">
+            <column name="degree" length="45" not-null="true" />
+        </property>
+        
+        <property name="User_id" type="java.lang.Integer">
+            <column name="User_id" length="45" not-null="true" />
+        </property>
+        
+    </class>
+</hibernate-mapping>
