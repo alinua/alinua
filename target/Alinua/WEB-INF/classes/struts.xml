@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	
+	<package name="json" namespace="/" extends="json-default">
+	
+		<action name="getAnnonce" class="SpringAction" method="getJson">
+			<result type="json"><param name="root">annonceJson</param></result>
+		</action>
+		
+		
+		<action name="springAction" class="SpringAction">
+		</action>
+	
+		
+		<action name="AddUserAction" class="UserAction" method="addUserAction">
+		</action>
+		
+		<action name="GetUserAction" class="UserAction" method="getUserAction">
+		</action>
+		
+		
+		<action name="AddJobAdvertAction" class="JobAdvertAction" method="addJobAdvertAction">
+		</action>
+		
+		<action name="GetJobAdvertAction" class="JobAdvertAction" method="getJobAdvertAction">
+		</action>
+	
+	
+	</package>
+	
+
+	
+	<package name="json2" namespace="/users" extends="json-default">
+	
+		<action name="execute2" class="SpringAction" method="execute2">
+		</action>
+		
+		
+		<action name="*" class="SpringAction" method="execute3">
+		</action>
+		
+		<action name="execute1" class="SpringAction" method="execute5">
+		</action>
+	
+	</package>
+	
+	
+
+
+
+<constant name="struts.enable.SlashesInActionNames" value="true"/>
+<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+<constant name="struts.patternMatcher" value="regex" />
+
+
+
+	<package name="json3" namespace="/user" extends="json-default">	
+		
+		
+	
+		<action name="*/execute2/*" class="SpringAction" method="execute5">
+		</action>
+		
+		
+		<action name="ac" class="SpringAction" method="execute4">
+		</action>
+
+	</package>
+
+	 
+	
+
+
+</struts>

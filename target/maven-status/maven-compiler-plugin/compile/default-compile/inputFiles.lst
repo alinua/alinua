@@ -1,5 +1,9 @@
-/home/etudiant/workspace/AlinuaProg/src/main/java/com/m1Info/listener/HibernateListener.java
-/home/etudiant/workspace/AlinuaProg/src/main/java/com/m1Info/user/UserImpl.java
-/home/etudiant/workspace/AlinuaProg/src/main/java/com/m1Info/action/UserSpringAction.java
-/home/etudiant/workspace/AlinuaProg/src/main/java/com/m1Info/user/User.java
-/home/etudiant/workspace/AlinuaProg/src/main/java/com/m1Info/model/userModel.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/bean/User.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/dao/JobAdvertDao.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/bean/JobAdvert.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/dao/UserDao.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/action/UserAction.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/action/SpringAction.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/dao/UserDaoImpl.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/action/JobAdvertAction.java
+/home/etudiant/workspace/Alinua/src/main/java/com/m1Info/dao/JobAdvertDaoImpl.java

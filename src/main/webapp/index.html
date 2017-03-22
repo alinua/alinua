@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Titre onglet du navigateur -->
+        <title>
+            Alinua     
+        </title>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="pages/Alinua/css/layout.css">
+    </head>
+
+    <body ng-app="angularApp">
+
+        <!-- Menu -->
+        <header role="banner">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <!-- Bouton gérant le menu sur petit écran -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-toggler-right" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            Alinua
+                            <!-- <img src="./images/logo.png" height="40" class="d-inline-block align-top" alt="logo Alinua"> -->    
+                        </a>
+                    </div>
+                    <!-- Items du menu -->
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li  ng-class="{'active': activePath == '/'}">
+                                <a href="#">
+                                    Accueil
+                                </a>
+                            </li>
+                            <li ng-class="{'active': activePath == '/annonces'}">
+                                <a href="#!/annonces">
+                                    Annonces
+                                </a>
+                            </li>
+                            <li  ng-class="{'active': activePath == '/messagerie'}">
+                                <a href="#">
+                                    Messagerie
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Contenu spécifique de la page -->
+        <div id='page' class="container-fluid">    
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs" id="profile">
+                    <!-- Données Utilisateur -->
+                    <div class="dropdown profile-element"> 
+                        <span>
+                            <img alt="image" class="img-circle img-responsive" src="images/profile.jpg">
+                        </span>
+                        <div data-toggle="dropdown" class="dropdown-toggle">
+                            <span class="clear"> 
+                                <span> 
+                                    <b>
+                                        Utilisateur
+                                    </b>
+                                </span>
+                                <span>
+                                    Fonction
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Profile, cv, ... -->
+                </div>
+
+                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2" id="pageContent">
+                    <div class="row" id="pageBody">
+                        <!-- Page body -->
+                        <div ng-view>
+                            
+                        </div>   
+                    </div>
+                    <div class="row">
+                        <!--Footer-->
+                        <footer>
+                            <div class="footer-copyright">
+                                <div class="container-fluid">
+                                    Copyright Alinua 2017 © Tous droits réservés
+                                </div>
+                            </div>
+                        </footer>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT -->
+        <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
+        <script src="js/angular-social-login.js"></script>
+
+        <script type="text/javascript">
+        
+            var app = angular.module('angularApp', ['ngRoute','socialLogin']);
+            
+            app.config(function($routeProvider, socialProvider){
+                $routeProvider
+                    .when('/', {
+                        templateUrl: 'views/home.html',
+                        controller: 'IndexCtrl'
+                    })
+                    .when('/annonces/:id', {
+                        templateUrl: 'views/annonce.html', 
+                        controller: 'AnnoncesCtrl'
+                    })
+                    .when('/annonces', {
+                        templateUrl: 'views/annonces.html', 
+                        controller: 'AnnoncesCtrl'
+                    })
+                    .otherwise({redirectTo : '/'})
+                ;
+
+                // Clé api
+                socialProvider.setGoogleKey("365826374958-c2int2sjbc1ii5lu4oiqg3mrhsl5sovi.apps.googleusercontent.com");
+                socialProvider.setLinkedInKey("YOUR LINKEDIN CLIENT ID");
+                socialProvider.setFbKey("YOUR FACEBOOK APP ID");
+            });
+            
+            app.factory('AnnonceFactory', function($http, $q) {
+                var factory = {
+                    annonces: false,
+                    getAnnonces : function() {
+                        var deferred = $q.defer();
+                        $http.get('getAnnonce')
+                            .then(function(response){                                    
+                                factory.annonces = response.data;
+                                deferred.resolve(response.data);
+                            }, function(response){                                    
+                                deferred.reject('Impossible de récupérer les annonces.');
+                            })
+                        ;
+                        return deferred.promise;
+                    },
+                    getAnnonce : function(id) {
+                        var deferred = $q.defer();
+                        var annonce = {};
+                        var annonces = factory.getAnnonces().then(
+                            // Success
+                            function(annonces) {
+                                angular.forEach(annonces, function(value, key){
+                                    if (value.id == id) {
+                                        annonce = value;
+                                    }
+                                });
+                                deferred.resolve(annonce);
+                            },
+                            // Error
+                            function(msg) {                                    
+                                deferred.reject(msg);
+                            }
+                        );                        
+                        return deferred.promise;
+                    }
+                };
+                return factory;
+            });
+
+            app.controller('IndexCtrl', function($rootScope){
+                $rootScope.activePath = '/';
+
+                // Connexion
+                $rootScope.$on('event:social-sign-in-success', function(event, userDetails){
+                    console.log(userDetails);
+                });
+                // Deconnexion
+                $rootScope.$on('event:social-sign-out-success', function(event, logoutStatus){
+                    console.log(logoutStatus);
+                });
+
+                // Méthode pour logout
+                /*
+                    socialLoginService.logout();
+                */
+            });
+
+            app.controller('AnnoncesCtrl', function ($scope, AnnonceFactory, $routeParams, $rootScope){      
+                $rootScope.activePath = '/annonces';
+
+                // Récupération des annonces
+                if ($routeParams.id == null) {
+                    $scope.loading = true;       
+                    $scope.annonces = AnnonceFactory.getAnnonces().then(
+                        // Success
+                        function(annonces){
+                            $scope.annonces = annonces;
+                            $scope.loading = false;
+                        }, 
+                        // Error
+                        function(msg){
+                            alert(msg);
+                            $scope.loading = false;
+                        }
+                    );
+                }
+
+                // Récupération d'une annonce précise
+                if ($routeParams.id != null) {
+                    $scope.loading = true;
+                    $scope.annonce = AnnonceFactory.getAnnonce($routeParams.id).then(
+                        // Success
+                        function(annonce) {
+                            $scope.annonce = annonce;
+                            $scope.loading = false;
+                        },
+                        // Error
+                        function(msg) {
+                            alert(msg);
+                            $scope.loading = false;
+                        }
+                    );
+                }
+
+            });
+        
+        </script>
+    </body>
+</html>
