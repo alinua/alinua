@@ -49,6 +49,11 @@
                                     Annonces
                                 </a>
                             </li> 
+			    <li ng-class="{'active': activePath == '/users'}">
+                                <a href="#!/users">
+                                    Users
+                                </a>
+                            </li> 
                             <li  ng-class="{'active': activePath == '/login'}">
                                 <a href="#!/login">
                                     Connexion
@@ -113,6 +118,9 @@
         <script src="profile/profile.component.js"></script>
         <script src="carousel-profils/carousel-profils.module.js"></script>
         <script src="carousel-profils/carousel-profils.component.js"></script>
+		<script src="user-list/user-list.module.js"></script>
+        <script src="user-list/user-list.component.js"></script>
+
        
     </body>
 </html>

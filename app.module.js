@@ -7,5 +7,6 @@ angular.module('alinua', [
 	'userMenu',
 	'profile',
 	'carouselProfils',
-	'login'
+	'login',
+	'userList'
 ]);
