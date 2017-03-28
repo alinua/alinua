@@ -6,4 +6,5 @@
 /home/etudiant/workspace/alinua/src/main/java/com/m1Info/dao/JobAdvertDao.java
 /home/etudiant/workspace/alinua/src/main/java/com/m1Info/dao/JobAdvertDaoImpl.java
 /home/etudiant/workspace/alinua/src/main/java/com/m1Info/bean/User.java
+/home/etudiant/workspace/alinua/src/main/java/com/m1Info/bean/Role.java
 /home/etudiant/workspace/alinua/src/main/java/com/m1Info/action/JobAdvertAction.java
