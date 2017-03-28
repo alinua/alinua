@@ -171,6 +171,27 @@ nav.navbar {
 	padding-bottom: 15px;
 }
 
+.row {
+    padding: 10px 0;
+}
+
+.row .title {
+    margin-bottom: 50px;
+}
+
+.row .center {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row .left {
+    text-align: left;
+}
+
+.row .right {
+    text-align: right;
+}
 
 /**********/
 /* FOOTER */

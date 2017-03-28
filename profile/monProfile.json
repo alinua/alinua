@@ -1,7 +1,14 @@
 {
 "id": 0,
-"nom": "Ben",
-"prenom": "Eficiaire",
+"role": "Etudiant",
 "anneesco": "1996",
-"taille": "1m92"
+"recherche_emploi": true,
+"description": {
+    "nom": "Ben",
+    "prenom": "Eficiaire",
+    "formation": "Etudiant à l'Université d'Angers",
+    "code_postal": "49000",
+    "ville" : "Angers",
+    "pays" : "France"
+    }
 }
