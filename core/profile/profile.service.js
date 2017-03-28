@@ -10,4 +10,15 @@ angular.
         }
       });
     }
+  ]).
+  factory('ProfilsChomeurs', ['$resource',
+    function($resource) {
+      return $resource('profilsChomeurs/:id.json', {}, {
+        query: {
+          method: 'GET',
+          params: {id: 'profile'},
+          isArray: true
+        }
+      });
+    }
   ]);

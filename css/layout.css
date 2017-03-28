@@ -45,9 +45,30 @@ nav.navbar {
 .homeEntete {
     background-color: rgb(61, 141, 210);
     color: white;
-    text-transform: uppercase;
-    padding: 15px 0px 20px;
+    padding: 0px 0px 20px;
     border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.homeEntete ul {
+	text-align: left;
+}
+
+.homeEntete a.closeBandeau {
+	float: right;
+	font-size: 20px;
+	right: 12px;
+	position: relative;
+	color: blue;
+	cursor: pointer;
+}
+
+.homeEntete .actionsInscription a{	
+	transition: all 0.6s ease;
+}
+
+.homeEntete a.closeBandeau:hover {
+	text-decoration: none;
 }
 
 .annonce a:hover {
