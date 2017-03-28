@@ -3,12 +3,12 @@
 /**********/
 
 nav.navbar {
-    border-radius: 0px;
+	border-radius: 0px;
 }
 
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:hover {
-    background-color: inherit;
+	background-color: inherit;
 }
 
 /***********/
@@ -16,17 +16,17 @@ nav.navbar {
 /***********/
 
 #page {
-    padding: 15px 15px 0px 15px;
-    margin-top: 35px;
+	padding: 15px 15px 0px 15px;
+	margin-top: 35px;
 }
 
 #pageContent {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
 #pageBody {
-    min-height: 90vh;
-    padding-top: 10px;
+	min-height: 90vh;
+	padding-top: 10px;
 }
 
 #connexionActions {
@@ -35,19 +35,19 @@ nav.navbar {
 }
 
 .title {
-    text-align: center;
+	text-align: center;
 }
 
 .img-circle {
-    border-radius: 50%;
+	border-radius: 50%;
 }
 
 .homeEntete {
-    background-color: rgb(61, 141, 210);
-    color: white;
-    padding: 0px 0px 20px;
-    border-radius: 3px;
-    margin-bottom: 15px;
+	background-color: rgb(61, 141, 210);
+	color: white;
+	padding: 0px 0px 20px;
+	border-radius: 3px;
+	margin-bottom: 15px;
 }
 
 .homeEntete ul {
@@ -72,24 +72,24 @@ nav.navbar {
 }
 
 .annonce a:hover {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 #profile {
-    position: fixed;
-    border-right: 1px solid #2b2b2b;
-    height: 100%;
-    background-color: #263949;
-    padding-top: 20px;
+	position: fixed;
+	border-right: 1px solid #2b2b2b;
+	height: 100%;
+	background-color: #263949;
+	padding-top: 20px;
 }
 
 .dropdown-toggle {
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
 #connexionAction {
-    margin: 20px;
+	margin: 20px;
 }
 
 #recherche input {
@@ -101,37 +101,37 @@ nav.navbar {
 /**********/
 
 .card {
-    border: 1px solid #ccc;
-    margin: 15px;
-    margin-top: 25px;
-    transition: all 0.4s;
+	border: 1px solid #ccc;
+	margin: 15px;
+	margin-top: 25px;
+	transition: all 0.4s;
 }
 
 .card:hover {
-    transform: scale(1.02);
+	transform: scale(1.02);
 }
 
 .card .card-header {
-    text-align: center;
-    background-color: #2882ad;
-    color: #cacaca;
-    padding: 10px;
+	text-align: center;
+	background-color: #2882ad;
+	color: #cacaca;
+	padding: 10px;
 }
 
 .card .card-header .card-title {
-    text-transform: uppercase;
-    color: white;
+	text-transform: uppercase;
+	color: white;
 }
 
 .card .card-body {
-    padding: 12px;
-    color: black;
+	padding: 12px;
+	color: black;
 }
 
 .card .card-footer {
-    padding: 10px;
-    background-color: #6b6b6b;
-    color: white;
+	padding: 10px;
+	background-color: #6b6b6b;
+	color: white;
 }
 
 /****************/
@@ -172,25 +172,102 @@ nav.navbar {
 }
 
 .row {
-    padding: 10px 0;
+	height: 60px;
 }
 
 .row .title {
-    margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 
 .row .center {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 20px;
 }
 
 .row .left {
-    text-align: left;
+	text-align: left;
 }
 
 .row .right {
-    text-align: right;
+	text-align: right;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal-header * {
+	width: 100%;
+}
+
+.modal-header button {
+	text-align: right;
+}
+
+button.synchronize {
+	padding: 10px;
+}
+
+ /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  transform: scale(0.8);
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /**********/
@@ -198,10 +275,10 @@ nav.navbar {
 /**********/
 
 footer {
-    text-align: center;
-    padding: 10px;
-    border-top: 1px solid #8e8e8e;
-    background-color: #ccc;
-    color: #38526d;
-    width: 100%;
+	text-align: center;
+	padding: 10px;
+	border-top: 1px solid #8e8e8e;
+	background-color: #ccc;
+	color: #38526d;
+	width: 100%;
 }
