@@ -13,10 +13,11 @@
         <!-- CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="pages/Alinua/css/layout.css">
+        <link rel="stylesheet" href="./css/layout.css">
+        
     </head>
 
-    <body ng-app="angularApp">
+    <body ng-app="alinua">
 
         <!-- Menu -->
         <header role="banner">
@@ -32,7 +33,7 @@
                         </button>
                         <a class="navbar-brand" href="#">
                             Alinua
-                            <!-- <img src="./images/logo.png" height="40" class="d-inline-block align-top" alt="logo Alinua"> -->    
+                           <!-- <img src="images/logo.png" height="40" class="d-inline-block align-top" alt="logo Alinua">   -->
                         </a>
                     </div>
                     <!-- Items du menu -->
@@ -47,10 +48,15 @@
                                 <a href="#!/annonces">
                                     Annonces
                                 </a>
-                            </li>
-                            <li  ng-class="{'active': activePath == '/messagerie'}">
-                                <a href="#">
-                                    Messagerie
+                            </li> 
+			    <li ng-class="{'active': activePath == '/users'}">
+                                <a href="#!/users">
+                                    Users
+                                </a>
+                            </li> 
+                            <li  ng-class="{'active': activePath == '/login'}">
+                                <a href="#!/login">
+                                    Connexion
                                 </a>
                             </li>
                         </ul>
@@ -63,32 +69,15 @@
         <div id='page' class="container-fluid">    
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs" id="profile">
-                    <!-- Données Utilisateur -->
-                    <div class="dropdown profile-element"> 
-                        <span>
-                            <img alt="image" class="img-circle img-responsive" src="images/profile.jpg">
-                        </span>
-                        <div data-toggle="dropdown" class="dropdown-toggle">
-                            <span class="clear"> 
-                                <span> 
-                                    <b>
-                                        Utilisateur
-                                    </b>
-                                </span>
-                                <span>
-                                    Fonction
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- Profile, cv, ... -->
+                    <!-- Menu Utilisateur -->
+                    <user-menu></user-menu>
                 </div>
 
                 <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2" id="pageContent">
                     <div class="row" id="pageBody">
                         <!-- Page body -->
-                        <div ng-view>
-                            
+                        <div ng-view>  
+                                                  
                         </div>   
                     </div>
                     <div class="row">
@@ -104,137 +93,38 @@
                 </div>
             </div>
         </div>
-
-        <!-- JAVASCRIPT -->
+	
+		<!-- JAVASCRIPT -->
         <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
-        <script src="js/angular-social-login.js"></script>
-
-        <script type="text/javascript">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-resource.js"></script>
         
-            var app = angular.module('angularApp', ['ngRoute','socialLogin']);
-            
-            app.config(function($routeProvider, socialProvider){
-                $routeProvider
-                    .when('/', {
-                        templateUrl: 'views/home.html',
-                        controller: 'IndexCtrl'
-                    })
-                    .when('/annonces/:id', {
-                        templateUrl: 'views/annonce.html', 
-                        controller: 'AnnoncesCtrl'
-                    })
-                    .when('/annonces', {
-                        templateUrl: 'views/annonces.html', 
-                        controller: 'AnnoncesCtrl'
-                    })
-                    .otherwise({redirectTo : '/'})
-                ;
-
-                // Clé api
-                socialProvider.setGoogleKey("365826374958-c2int2sjbc1ii5lu4oiqg3mrhsl5sovi.apps.googleusercontent.com");
-                socialProvider.setLinkedInKey("YOUR LINKEDIN CLIENT ID");
-                socialProvider.setFbKey("YOUR FACEBOOK APP ID");
-            });
-            
-            app.factory('AnnonceFactory', function($http, $q) {
-                var factory = {
-                    annonces: false,
-                    getAnnonces : function() {
-                        var deferred = $q.defer();
-                        $http.get('getAnnonce')
-                            .then(function(response){                                    
-                                factory.annonces = response.data;
-                                deferred.resolve(response.data);
-                            }, function(response){                                    
-                                deferred.reject('Impossible de récupérer les annonces.');
-                            })
-                        ;
-                        return deferred.promise;
-                    },
-                    getAnnonce : function(id) {
-                        var deferred = $q.defer();
-                        var annonce = {};
-                        var annonces = factory.getAnnonces().then(
-                            // Success
-                            function(annonces) {
-                                angular.forEach(annonces, function(value, key){
-                                    if (value.id == id) {
-                                        annonce = value;
-                                    }
-                                });
-                                deferred.resolve(annonce);
-                            },
-                            // Error
-                            function(msg) {                                    
-                                deferred.reject(msg);
-                            }
-                        );                        
-                        return deferred.promise;
-                    }
-                };
-                return factory;
-            });
-
-            app.controller('IndexCtrl', function($rootScope){
-                $rootScope.activePath = '/';
-
-                // Connexion
-                $rootScope.$on('event:social-sign-in-success', function(event, userDetails){
-                    console.log(userDetails);
-                });
-                // Deconnexion
-                $rootScope.$on('event:social-sign-out-success', function(event, logoutStatus){
-                    console.log(logoutStatus);
-                });
-
-                // Méthode pour logout
-                /*
-                    socialLoginService.logout();
-                */
-            });
-
-            app.controller('AnnoncesCtrl', function ($scope, AnnonceFactory, $routeParams, $rootScope){      
-                $rootScope.activePath = '/annonces';
-
-                // Récupération des annonces
-                if ($routeParams.id == null) {
-                    $scope.loading = true;       
-                    $scope.annonces = AnnonceFactory.getAnnonces().then(
-                        // Success
-                        function(annonces){
-                            $scope.annonces = annonces;
-                            $scope.loading = false;
-                        }, 
-                        // Error
-                        function(msg){
-                            alert(msg);
-                            $scope.loading = false;
-                        }
-                    );
-                }
-
-                // Récupération d'une annonce précise
-                if ($routeParams.id != null) {
-                    $scope.loading = true;
-                    $scope.annonce = AnnonceFactory.getAnnonce($routeParams.id).then(
-                        // Success
-                        function(annonce) {
-                            $scope.annonce = annonce;
-                            $scope.loading = false;
-                        },
-                        // Error
-                        function(msg) {
-                            alert(msg);
-                            $scope.loading = false;
-                        }
-                    );
-                }
-
-            });
+        <script src="js/satellizer.min.js"></script>
         
-        </script>
+        <script src="app.module.js"></script>
+        <script src="app.config.js"></script>
+        <script src="core/annonce/annonce.module.js"></script>
+        <script src="core/annonce/annonce.service.js"></script>
+        <script src="core/profile/profile.module.js"></script>
+        <script src="core/profile/profile.service.js"></script>
+        <script src="annonce-list/annonce-list.module.js"></script>
+        <script src="annonce-list/annonce-list.component.js"></script>
+        <script src="home-page/home-page.module.js"></script>
+        <script src="home-page/home-page.component.js"></script>
+        <script src="erreur404/erreur404.module.js"></script>
+        <script src="erreur404/erreur404.component.js"></script>
+        <script src="login/login.module.js"></script>
+        <script src="login/login.component.js"></script>
+        <script src="user-menu/user-menu.module.js"></script>
+        <script src="user-menu/user-menu.component.js"></script>
+        <script src="profile/profile.module.js"></script>
+        <script src="profile/profile.component.js"></script>
+	<script src="user-list/user-list.module.js"></script>
+        <script src="user-list/user-list.component.js"></script>
+	
+       
     </body>
 </html>
