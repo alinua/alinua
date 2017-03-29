@@ -34,9 +34,8 @@
                         </span>
                     </div>
                 </div>
-            </div>   
-        </div> 
-
+            </div>
+        </div>
         <div class="col-lg-8 col-lg-offset-2 annonce" ng-repeat="annonce in $ctrl.annonces | filter:$ctrl.searchText | orderBy:$ctrl.order">
             <a href="#!/annonces/{{annonce.id}}">
                 <div class="card">

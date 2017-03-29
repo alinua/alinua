@@ -3,10 +3,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.m1Info</groupId>
-  <artifactId>Alinua</artifactId>
+  <artifactId>alinua</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>Alinua Maven Webapp</name>
+  <name>alinua Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
 
@@ -183,6 +183,13 @@
     <version>3.0</version>
 </dependency>
 
+
+
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.0</version>
+</dependency>
  
 
     
@@ -194,7 +201,7 @@
 
 
   <build>
-    <finalName>Alinua</finalName>
+    <finalName>alinua</finalName>
     <plugins>
     
     
@@ -236,7 +243,7 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<path>/Alinua</path>
+					<path>/alinua</path>
 				</configuration>
 			</plugin>
     	

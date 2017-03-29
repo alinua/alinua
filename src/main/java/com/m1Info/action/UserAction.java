@@ -1,5 +1,6 @@
 package com.m1Info.action;
 
+import com.google.gson.Gson;
 import com.m1Info.bean.User;
 import com.m1Info.dao.UserDao;
 
@@ -45,11 +46,11 @@ public class UserAction {
 	
 	
 	public String getUserAction(){
-		
-
 		int id=4;
 		User user=userDao.getUser(id);
-		System.out.println("User recupéré "+user.toString());
+		System.out.println("User recupéré "+user.toString());		
+		String json_str = new Gson().toJson(user);
+		System.out.println("User recupéré json "+json_str);
 		return "success";
 	
 	}

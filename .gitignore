@@ -1,0 +1,18 @@
+# Avoid to push *.class files
+target/classes/com/m1Info/*/*.class
+target/alinua/WEB-INF/classes/com/m1Info/*/*.class
+
+# Maven files
+target/maven-status/
+target/maven-archiver/pom.properties
+
+# Avoid to push maven downloaded libs
+target/alinua/WEB-INF/lib/*.jar
+
+# Avoid to push 17M
+target/alinua.war
+
+# Eclipse
+.project
+.classpath
+.settings/*

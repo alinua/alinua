@@ -20,6 +20,6 @@ angular
 		    })
 		    .when('/profile', {
                 template: '<profile></profile>',
-            })	    
+            })
 		    .otherwise({redirectTo : '/erreur404'});
 	}]);
