@@ -16,7 +16,7 @@ angular
 			/**
 			 * Méthode de récupération des informations des profils depuis un fichier json
 			 * Appelée au chargement de la page
-			 * @param user-list/MyUsers.json	fichier contenant les informations des profil
+			 * @param user-list/MyUsers.json	fichier contenant les informations des profils
 			 */
 	        $http.get('user-list/MyUsers.json')
 	            .then(function(response){
