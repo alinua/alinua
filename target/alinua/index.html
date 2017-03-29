@@ -7,14 +7,14 @@
 
         <!-- Titre onglet du navigateur -->
         <title>
-            Alinua
+            Alinua     
         </title>
-
+        
         <!-- CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/layout.css">
-
+        
     </head>
 
     <body ng-app="alinua">
@@ -48,12 +48,12 @@
                                 <a href="#!/annonces">
                                     Annonces
                                 </a>
-                            </li>
-                <li ng-class="{'active': activePath == '/users'}">
+                            </li> 
+			    <li ng-class="{'active': activePath == '/users'}">
                                 <a href="#!/users">
                                     Users
                                 </a>
-                            </li>
+                            </li> 
                             <li  ng-class="{'active': activePath == '/login'}">
                                 <a href="#!/login">
                                     Connexion
@@ -66,18 +66,13 @@
         </header>
 
         <!-- Contenu spécifique de la page -->
-        <div id='page' class="container-fluid">
+        <div id='page' class="container-fluid">    
             <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs" id="profile">
-                    <!-- Menu Utilisateur -->
-                    <user-menu></user-menu>
-                </div>
-
                <!-- <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2" id="pageContent"> -->
                 <div class="col-lg-12 col-md-12 col-sm-12" id="pageContent">
                     <div class="row" id="pageBody">
                         <!-- Page body -->
-                        <div ng-view></div>
+                        <div ng-view></div>   
                     </div>
                     <div class="row">
                         <!--Footer-->
@@ -87,22 +82,22 @@
                                     Copyright Alinua 2017 © Tous droits réservés
                                 </div>
                             </div>
-                        </footer>
+                        </footer>  
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- JAVASCRIPT -->
+	
+		<!-- JAVASCRIPT -->
         <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-resource.js"></script>
-
+        
         <script src="js/satellizer.min.js"></script>
-
+        
         <script src="app.module.js"></script>
         <script src="app.config.js"></script>
         <script src="core/annonce/annonce.module.js"></script>
@@ -123,7 +118,9 @@
         <script src="profile/profile.component.js"></script>
         <script src="carousel-profils/carousel-profils.module.js"></script>
         <script src="carousel-profils/carousel-profils.component.js"></script>
-        <script src="user-list/user-list.module.js"></script>
+		<script src="user-list/user-list.module.js"></script>
         <script src="user-list/user-list.component.js"></script>
+
+       
     </body>
 </html>
