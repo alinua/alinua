@@ -1,24 +1,99 @@
-<div class="col-lg-12"> 
-    <div class="row" ng-show="loading">
-        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-        <span class="sr-only">Loading...</span>
-    </div>
+<div class="col-lg-12 profile">
+	<div class="row" ng-show="loading">
+		<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
+	</div>
+	
+	<!--<div class="alert alert-success" role="alert">
+		... a été modifié avec succès.
+	</div>-->
+	
+	<div class="row" ng-hide="loading">
+		
+		<div class="alert alert-info center" role="alert">
+			<button type="button" class="btn btn-primary synchronize">
+				<span class="glyphicon glyphicon-refresh"></span> Actualiser le profil avec les données LinkedIn<!-- à gérer en js : au clic, change dans la bdd et refresh la page -->
+			</button>
+		</div>
 
-    <div class="row" ng-hide="loading">
-        <div class="col-lg-8 col-lg-offset-2 title">
-            <h2>
-                {{$ctrl.profile.nom}} - {{$ctrl.profile.prenom}}
-            </h2>
-        </div>
+		<div class="col-lg-8 col-lg-offset-2 title">
+			<h2>
+				{{$ctrl.profile.description.nom}} {{$ctrl.profile.description.prenom}}
+			</h2>
+			<h3>
+				{{$ctrl.profile.description.formation}}
+			</h3>
+			<!--<h3>
+				<label class="btn btn-info active" ng-show="$ctrl.profile.recherche_emploi">
+					<input type="checkbox" checked> En recherche d'emploi
+				</label>
+				<label class="btn btn-info" ng-hide="$ctrl.profile.recherche_emploi">
+					<input type="checkbox"> En recherche d'emploi
+				</label>
+			</h3>-->
+  		</div>
+		
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="row">
+				<div class="col-sm-3 left">Rôle sur AlinUA</div>
+				<div class="col-sm-5 left">{{$ctrl.profile.role}}</div>
+			</div>
 
-        <div class="col-lg-8 col-lg-offset-2">
-            <h4>
-                Année : {{$ctrl.profile.anneesco}}
-            </h4>
-            <hr>
-            <p>
-                Taille : {{$ctrl.profile.taille}}
-            </p>
-        </div>
-    </div>
+			<div class="row">
+				<div class="col-sm-3 left">Année de promotion</div>
+				<div class="col-sm-5 left">{{$ctrl.profile.anneesco}}</div>
+				<div class="col-sm-4 right"><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editPromo">Modifier</button></div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-3 left">En recherche d'emploi</div>
+				<div class="col-sm-5 left">
+					<label class="switch" ng-show="$ctrl.profile.recherche_emploi">
+						<input type="checkbox" checked>
+						<div class="slider round"></div>
+					</label>
+					<label class="switch" ng-hide="$ctrl.profile.recherche_emploi">
+						<input type="checkbox">
+						<div class="slider round"></div>
+					</label>
+				</div>
+			</div>
+
+			<hr>
+			
+			<div class="row">
+				<div class="col-sm-3 left">Adresse</div>
+				<div class="col-sm-5 left">{{$ctrl.profile.description.code_postal}} {{$ctrl.profile.description.ville}}, {{$ctrl.profile.description.pays}}</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+<div class="modal fade" id="editPromo" tabindex="-1" role="dialog" aria-labelledby="editPromoTitre" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="editPromoTitre">Modifier l'année de promotion</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label for="promo_year" class="form-control-label">Changez l'année de sortie de promotion :</label>
+						<input ng-href="promo_year" type="number" class="form-control" id="promo_year" min="1980" value="{{$ctrl.profile.anneesco}}">
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Sauvegarder</button><!-- à gérer en javascript -->
+			</div>
+		</div>
+	</div>
 </div>

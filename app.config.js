@@ -15,6 +15,9 @@ angular
 		    .when('/login', {
 		        template: '<login></login>',
 		    })
+		    .when('/users', {
+		        template: '<user-list></user-list>',
+		    })
 		    .when('/profile', {
                 template: '<profile></profile>',
             })	    

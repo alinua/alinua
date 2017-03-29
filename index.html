@@ -66,6 +66,11 @@
                                     Annonces
                                 </a>
                             </li> 
+			    <li ng-class="{'active': activePath == '/users'}">
+                                <a href="#!/users">
+                                    Users
+                                </a>
+                            </li> 
                             <li  ng-class="{'active': activePath == '/login'}">
                                 <!-- Trigger the modal with a button -->
 				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalSignup">S'incrire</button>
@@ -79,17 +84,11 @@
         <!-- Contenu spécifique de la page -->
         <div id='page' class="container-fluid">    
             <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs" id="profile">
-                    <!-- Menu Utilisateur -->
-                    <user-menu></user-menu>
-                </div>
-
-                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2" id="pageContent">
+               <!-- <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2" id="pageContent"> -->
+                <div class="col-lg-12 col-md-12 col-sm-12" id="pageContent">
                     <div class="row" id="pageBody">
                         <!-- Page body -->
-                        <div ng-view>  
-                                                  
-                        </div>   
+                        <div ng-view></div>   
                     </div>
                     <div class="row">
                         <!--Footer-->
@@ -135,6 +134,11 @@
         <script src="user-menu/user-menu.component.js"></script>
         <script src="profile/profile.module.js"></script>
         <script src="profile/profile.component.js"></script>
+        <script src="carousel-profils/carousel-profils.module.js"></script>
+        <script src="carousel-profils/carousel-profils.component.js"></script>
+		<script src="user-list/user-list.module.js"></script>
+        <script src="user-list/user-list.component.js"></script>
+
        
     </body>
 </html>

@@ -1,1 +1,3 @@
-angular.module('homePage', []);
+angular.module('homePage', [
+	'annonceList',
+]);
