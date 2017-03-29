@@ -83,7 +83,7 @@
 			</div>
 			
 			<div class="modal-body">
-				<form>
+				<form ng-submit="editPromo()">
 					<div class="form-group">
 						<label for="promo_year" class="form-control-label">Changez l'année de sortie de promotion :</label>
 						<input ng-href="promo_year" type="number" class="form-control" id="promo_year" min="1980" value="{{$ctrl.profile.anneesco}}">

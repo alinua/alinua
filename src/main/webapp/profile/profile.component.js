@@ -2,6 +2,9 @@ angular
 	.module('profile')
 	.component('profile', {
 		templateUrl: 'profile/profile.html',
+		/**
+		 * Controlleur du profile
+		 */
 		controller: ['$http','Profile', function ProfileController($http, Profile) {
 			var self = this;
 			self.loading = true;
@@ -18,5 +21,20 @@ angular
 		            self.loading = false;
 	            })
 	        ;
+			/* Une fois que l'url Back sera ok, il faudra utiliser le service
+				?
+			*/
+			$http.get('profile/.json')
+				.then(function(editPromo){
+					$scope.list = [];
+					$scope.text = 'hello';
+					$scope.submit = function() {
+						if ($scope.text) {
+							$scope.list.push(this.text);
+							$scope.text = '';
+						}
+					}
+				})
+			;
 		}]	
 	});
