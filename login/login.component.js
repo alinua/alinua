@@ -1,25 +1,16 @@
+/**
+ * Module de connection LinkedIn
+ * 
+ * Module de connection LinkedIn
+ *
+ **/
 angular
 	.module('login')
 	.component('login', {
 		templateUrl: 'login/login.html',
-		controller: function LoginController($scope,$auth) {
+		controller: function LoginController($scope,$auth,$location,$http,$window) {
 			$scope.authenticate = function(provider) {
-				$auth.authenticate(provider)
-					.then(function(data) {
-						alert('COUCOU');
-						alert(data);
-					})
-			        .catch(function(error) {
-						if (error.error) {
-							// Popup error - invalid redirect_uri, pressed cancel button, etc.
-							alert("1"+error.error);
-						} else if (error.data) {
-							// HTTP response error from server
-							alert("2"+error.status);
-						} else {
-							alert("3"+error);
-						}
-			      	});
+			       $window.open('https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=775n9ttoxg45s6&redirect_uri=http%3A%2F%2Flocalhost%2Falinua%2F&state=DCEeFWf45A53sdfKef424', "popup", "width=400,height=600,left=10,top=150");
 			};
 		}	
 	});
