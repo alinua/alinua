@@ -171,46 +171,50 @@ nav.navbar {
 	padding-bottom: 15px;
 }
 
-.row {
+.profile .row {
 	height: 60px;
 }
 
-.row .title {
+.profile .row .title {
 	margin-bottom: 50px;
 }
 
-.row .center {
+.profile .row .center {
 	text-align: center;
 	margin-top: 0;
 	margin-bottom: 20px;
 }
 
-.row .left {
+.profile .row .left {
 	text-align: left;
 }
 
-.row .right {
+.profile .row .right {
 	text-align: right;
 }
 
-.modal-header {
+.profile .modal-header {
 	display: flex;
 	justify-content: space-between;
 }
 
-.modal-header * {
+.profile .modal-header * {
 	width: 100%;
 }
 
-.modal-header button {
+.profile .modal-header button {
 	text-align: right;
 }
 
-button.synchronize {
+.profile button.synchronize {
 	padding: 10px;
 }
 
- /* The switch - the box around the slider */
+/*****************/
+/* Switch Button */
+/*****************/
+
+/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
