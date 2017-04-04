@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 mars 2017 04:40:37 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.m1Info.models.JobAdvert" table="JOBADVERT">
+        <id name="url" type="java.lang.String" access="field">
+            <column name="URL" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="com.m1Info.models.User" fetch="join">
+            <column name="USER" />
+        </many-to-one>
+        <property name="jobTitle" type="java.lang.String">
+            <column name="JOBTITLE" />
+        </property>
+        <property name="location" type="java.lang.String">
+            <column name="LOCATION" />
+        </property>
+        <property name="company" type="java.lang.String">
+            <column name="COMPANY" />
+        </property>
+        <property name="jobDescription" type="java.lang.String">
+            <column name="JOBDESCRIPTION" />
+        </property>
+        <property name="pubDate" type="java.util.Date">
+            <column name="PUBDATE" />
+        </property>
+        <property name="skills" type="java.lang.String">
+            <column name="SKILLS" />
+        </property>
+        <property name="degree" type="java.lang.String">
+            <column name="DEGREE" />
+        </property>
+    </class>
+</hibernate-mapping>

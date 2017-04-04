@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 mars 2017 05:08:11 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.m1Info.models.SchoolYear" table="SCHOOLYEAR">
+        <id name="id" type="java.lang.Long" access="field">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="year" type="java.util.Date">
+            <column name="YEAR" />
+        </property>
+        <many-to-one name="user" class="com.m1Info.models.User" fetch="join">
+            <column name="USER" />
+        </many-to-one>
+        <many-to-one name="education" class="com.m1Info.models.Education" fetch="join">
+            <column name="EDUCATION" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

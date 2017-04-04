@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+ 
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Alinuadb</property>
+  <property name="hibernate.connection.username">m1Info</property>
+  
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  
+  <property name="hibernate.show_sql">true</property>
+  
+  <property name="hibernate.hbm2ddl.auto">create</property>
+  
+  <property name="hibernate.cache.use_second_level_cache">false</property>
+  
+  <mapping resource="hibernate_mapping/JobAdvert.hbm.xml"/>
+  <mapping resource="hibernate_mapping/Chat.hbm.xml"/>
+  <mapping resource="hibernate_mapping/Course.hbm.xml"/>
+  <mapping resource="hibernate_mapping/Education.hbm.xml"/>
+  <mapping resource="hibernate_mapping/Project.hbm.xml"/>
+  <mapping resource="hibernate_mapping/SchoolYear.hbm.xml"/>
+  <mapping resource="hibernate_mapping/User.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 mars 2017 11:38:28 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.m1Info.models.Project" table="PROJECT">
+        <id name="projectName" type="java.lang.String">
+            <column name="PROJECTNAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="url" type="java.lang.String">
+            <column name="URL" />
+        </property>
+        <property name="githubUrl" type="java.lang.String">
+            <column name="GITHUBURL" />
+        </property>
+        <property name="topics" type="java.lang.String">
+            <column name="TOPICS" />
+        </property>
+        <property name="start" type="java.util.Date">
+            <column name="START" />
+        </property>
+        <property name="end" type="java.util.Date">
+            <column name="END" />
+        </property>
+        <many-to-one name="user" class="com.m1Info.models.User" fetch="join">
+            <column name="USER" />
+        </many-to-one>
+        <list name="members" inverse="false" table="USER" lazy="true">
+            <key>
+                <column name="PROJECTNAME" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.m1Info.models.User" />
+        </list>
+    </class>
+</hibernate-mapping>

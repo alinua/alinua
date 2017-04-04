@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14 mars 2017 11:38:28 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.m1Info.models.Chat" table="CHAT">
+        <id name="url" type="java.lang.String">
+            <column name="URL" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="com.m1Info.models.User" fetch="join">
+            <column name="USER" />
+        </many-to-one>
+        <list name="users" inverse="false" table="USER" lazy="true">
+            <key>
+                <column name="URL" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.m1Info.models.User" />
+        </list>
+        <property name="messages" type="java.lang.String">
+            <column name="MESSAGES" />
+        </property>
+        <property name="numDisplayed" type="java.lang.Integer">
+            <column name="NUMDISPLAYED" />
+        </property>
+    </class>
+</hibernate-mapping>

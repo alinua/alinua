@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 3 avr. 2017 23:22:35 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+
+<class
+    name="com.alinua.beans.Project"
+    table="PROJECT"
+>
+
+	<id 
+        name="name"
+        type="java.lang.String"
+    >
+    
+<column name="NAME" />
+	    <generator class="assigned" />
+    </id>
+
+
+
+
+    <property
+        name="start"
+	    type="java.sql.Timestamp"
+    >
+<column name="START" />
+  </property>
+
+    <property
+        name="end"
+	    type="java.sql.Timestamp"
+    >
+<column name="END" />
+  </property>
+
+    <property
+        name="githubUrl"
+	    type="java.lang.String"
+        access="field"
+    >
+<column name="GITHUBURL" />
+  </property>
+
+    <property
+        name="topics"
+	    type="java.lang.String"
+    >
+<column name="TOPICS" />
+  </property>
+
+
+	<list name="members" inverse="false" 
+table="USER"
+	lazy="true"
+        access="field"
+	>
+		<key
+		> 
+<column name="NAME" />
+		</key>
+    		<list-index>
+    		</list-index>
+<one-to-many class="com.alinua.beans.User"
+/>
+	</list>
+
+
+    <property
+        name="description"
+	    type="java.lang.String"
+    >
+<column name="DESCRIPTION" />
+  </property>
+
+
+</class>
+
+</hibernate-mapping>

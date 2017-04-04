@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 mars 2017 04:55:29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.m1Info.models.Education" table="EDUCATION">
+        <id name="label" type="java.lang.String">
+            <column name="LABEL" />
+            <generator class="assigned" />
+        </id>
+        <list name="courses" inverse="false" table="COURSE" lazy="true">
+            <key>
+                <column name="LABEL" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="com.m1Info.models.Course" />
+        </list>
+        <property name="headline" type="java.lang.String">
+            <column name="HEADLINE" />
+        </property>
+        <property name="degree" type="java.lang.String">
+            <column name="DEGREE" />
+        </property>
+    </class>
+</hibernate-mapping>

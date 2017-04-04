@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11 mars 2017 18:16:13 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.CV" table="CV">
+        <id name="id" type="java.lang.Long" access="field">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="user" class="model.User" fetch="join">
+            <column name="USER" />
+        </many-to-one>
+        <property name="fileCV" type="java.lang.String">
+            <column name="FILECV" />
+        </property>
+    </class>
+</hibernate-mapping>

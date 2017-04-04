@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+ 	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<!--  on ajoute le nom de l'action dans l'url pour l'exécuter ou dans une request ajax -->
+		
+		<!--  nom de l'action suivi du nom de la classe (le BEAN)  et puis le résultat -->
+		<action name="UserSpringAction" class="userSpringAction" >
+			<result name="success">pages/user.jsp</result>
+		</action>
+		
+
+
+	</package>
+
+</struts>

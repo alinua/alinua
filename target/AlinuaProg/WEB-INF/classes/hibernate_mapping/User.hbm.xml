@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 mars 2017 04:46:39 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.m1Info.models.User" table="USER">
+        <id name="url" type="java.lang.String">
+            <column name="URL" />
+            <generator class="assigned" />
+        </id>
+        <property name="firstName" type="java.lang.String">
+            <column name="FIRSTNAME" />
+        </property>
+        <property name="lastName" type="java.lang.String">
+            <column name="LASTNAME" />
+        </property>
+        <property name="headline" type="java.lang.String">
+            <column name="HEADLINE" />
+        </property>
+        <property name="location" type="java.lang.String">
+            <column name="LOCATION" />
+        </property>
+        <property name="pictureUrl" type="java.lang.String">
+            <column name="PICTUREURL" />
+        </property>
+        <property name="emailAdress" type="java.lang.String">
+            <column name="EMAILADRESS" />
+        </property>
+        <property name="industry" type="java.lang.String">
+            <column name="INDUSTRY" />
+        </property>
+        <property name="password" type="java.lang.String" access="field">
+            <column name="PASSWORD" />
+        </property>
+        <property name="jsonCV" type="java.lang.String">
+            <column name="JSONCV" />
+        </property>
+    </class>
+</hibernate-mapping>

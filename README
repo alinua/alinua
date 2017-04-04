@@ -1,0 +1,6 @@
+http://localhost:8080/AlinuaProg/UserSpringAction
+
+mvn package
+
+mvn eclipse:eclipse
+

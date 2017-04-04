@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="UserDAO" class="com.m1Info.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="UserAction" class="com.m1Info.action.UserAction">
+		<property name="userDao" ref="UserDao"/>
+	</bean>
+	
+	<!-- Database connection settings -->
+	<bean id="alinuaDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    	<property name="url" value="jdbc:mysql://localhost:3306/Alinuadb"/>
+    	<property name="username" value="m1Info"/>
+    	<property name="password" value=""/>
+	</bean>
+	
+	<!-- Hibernate XML SessionFactory Bean definition-->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="alinuaDataSource"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>hibernate_mapping/User.hbm.xml</value>
+				<value>hibernate_mapping/Education.hbm.xml</value>
+				<value>hibernate_mapping/JobAdvert.hbm.xml</value>
+				<value>hibernate_mapping/Chat.hbm.xml</value>
+				<value>hibernate_mapping/Course.hbm.xml</value>
+				<value>hibernate_mapping/SchoolYear.hbm.xml</value>
+				<value>hibernate_mapping/Project.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<!--  spring va creer le ben en mémoire 
+	<bean id="User" class="com.m1Info.user.UserImpl" />
+
+	<bean id="userSpringAction" class="com.m1Info.action.UserSpringAction">
+		<property name="user" ref="User" />
+	</bean>-->
+
+
+
+    
+    
+    
+    
+</beans>

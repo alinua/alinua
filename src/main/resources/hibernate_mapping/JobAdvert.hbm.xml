@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 3 avr. 2017 23:22:35 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+
+<class name="com.alinua.beans.JobAdvert" table="JOBADVERT">
+	<id name="idJobAdvert"
+        type="java.lang.String">
+    
+		<column name="IDJOBADVERT" />
+	    	<generator class="assigned" />
+    </id>
+
+
+
+
+    <property
+        name="title" type="java.lang.String">
+		<column name="TITLE" />
+  	</property>
+
+    <property
+        name="location"
+	    type="java.lang.String">
+		<column name="LOCATION" />
+  	</property>
+
+    <property
+        name="industry"
+	    type="java.lang.String">
+		<column name="INDUSTRY" />
+  	</property>
+
+    <property
+        name="postDate"
+	    type="java.sql.Timestamp">
+		<column name="POSTDATE" />
+  	</property>
+
+    <property
+        name="description"
+	    type="java.lang.String">
+		<column name="DESCRIPTION" />
+  	</property>
+
+
+</class>
+
+</hibernate-mapping>

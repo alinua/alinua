@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 3 avr. 2017 23:22:35 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+
+<class
+    name="com.alinua.beans.User"
+    table="USER"
+>
+
+	<id 
+        name="idLinkedin"
+        type="java.lang.String"
+    >
+    
+<column name="IDLINKEDIN" />
+	    <generator class="assigned" />
+    </id>
+
+
+
+
+    <property
+        name="email"
+	    type="java.lang.String"
+    >
+<column name="EMAIL" />
+  </property>
+
+    <property
+        name="role"
+    >
+<column name="ROLE" />
+  <type name="org.hibernate.type.EnumType">
+              		<param name="type">12</param>
+              		<param name="enumClass">com.alinua.beans.Role</param>
+  </type>
+  </property>
+
+
+	<list name="jobAdverts" inverse="false" 
+table="JOBADVERT"
+	lazy="true"
+	>
+		<key
+		> 
+<column name="IDLINKEDIN" />
+		</key>
+    		<list-index>
+    		</list-index>
+<one-to-many class="com.alinua.beans.JobAdvert"
+/>
+	</list>
+
+
+
+	<list name="archivedJobAdverts" inverse="false" 
+table="JOBADVERT"
+	lazy="true"
+	>
+		<key
+		> 
+<column name="IDLINKEDIN" />
+		</key>
+    		<list-index>
+    		</list-index>
+<one-to-many class="com.alinua.beans.JobAdvert"
+/>
+	</list>
+
+
+
+</class>
+
+</hibernate-mapping>

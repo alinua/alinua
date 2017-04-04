@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 3 avr. 2017 23:22:35 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+
+<class
+    name="com.alinua.beans.Alumni"
+    table="ALUMNI"
+>
+
+	<id 
+        name="year"
+        type="int"
+    >
+    
+<column name="YEAR" />
+	    <generator class="assigned" />
+    </id>
+
+
+
+
+
+	<map name="description"
+table="ALUMNI"
+	lazy="true"
+	>
+		<key
+		> 
+<column name="YEAR" />
+		</key>
+    		<map-key type="string">
+		</map-key>
+<element type="string">
+<column name="DESCRIPTION" />
+</element>
+	</map>    <property
+        name="lastUpdated"
+	    type="java.sql.Timestamp"
+        access="field"
+    >
+<column name="LASTUPDATED" />
+  </property>
+
+    <property
+        name="pictureUrl"
+	    type="java.lang.String"
+    >
+<column name="PICTUREURL" />
+  </property>
+
+    <many-to-one
+	    name="user"
+	    class="com.alinua.beans.User"
+	    
+        access="field"
+        fetch="join"
+    >
+<column name="USER" />
+   </many-to-one>
+
+	<list name="projects" inverse="false" 
+table="PROJECT"
+	lazy="true"
+        access="field"
+	>
+		<key
+		> 
+<column name="YEAR" />
+		</key>
+    		<list-index>
+    		</list-index>
+<one-to-many class="com.alinua.beans.Project"
+/>
+	</list>
+
+
+    <many-to-one
+	    name="cv"
+	    class="com.alinua.beans.CV"
+	    
+        access="field"
+        fetch="join"
+    >
+<column name="CV" />
+   </many-to-one>
+
+</class>
+
+</hibernate-mapping>
