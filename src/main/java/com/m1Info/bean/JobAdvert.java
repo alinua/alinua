@@ -5,6 +5,11 @@ import java.sql.Date;
 
 public class JobAdvert implements java.io.Serializable {
 	
+	/*
+	 * class bean for ads with standards getter/setter
+	 * 
+	 */
+	
 	private int id;
 	private String title;
 	private String location;
@@ -74,6 +79,11 @@ public class JobAdvert implements java.io.Serializable {
 
 	
 	public String toString() {
+		/*
+		 * return a string representation of the instance
+		 * 
+		 * @return	string concatenation of attribute/value
+		 */
 		return "JobAdvert [id=" + id + ", title=" + title + ", location="
 				+ location + ", industry=" + industry + ", date=" + date
 				+ ", skills=" + skills + ", description=" + description
