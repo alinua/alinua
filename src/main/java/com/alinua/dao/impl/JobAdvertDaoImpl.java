@@ -5,6 +5,13 @@ import java.util.Vector;
 import com.alinua.beans.JobAdvert;
 import com.alinua.dao.JobAdvertDAO;
 
+/**
+  *  Class of Job Advert DAO implementation 
+  *  Auto-generated class
+  *
+  *  @author Auto-generated
+  *  @version 1.0
+  **/
 public class JobAdvertDaoImpl implements JobAdvertDAO {
 
 	/**
