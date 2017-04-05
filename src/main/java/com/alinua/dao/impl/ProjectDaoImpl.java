@@ -30,7 +30,7 @@ public class ProjectDaoImpl implements ProjectDAO {
          *  Update of project from current
          *  Auto-generated method
 	 *
-	 *  @param {Project} Project - Project to save
+	 *  @param {Project} Project - Project to update
 	 *  @return {boolean} false
          */
 	@Override
@@ -43,7 +43,7 @@ public class ProjectDaoImpl implements ProjectDAO {
          *  Remove of project from current
          *  Auto-generated method
 	 *
-	 *  @param {Project} Project - Project to save
+	 *  @param {Project} Project - Project to remove
 	 *  @return {boolean} false
          */
 	@Override
@@ -53,8 +53,8 @@ public class ProjectDaoImpl implements ProjectDAO {
 	}
 
 	/**
-         *  Getter of projects from current 
-         *  Auto-generated method
+         *  Getter of projects 
+	 *  Auto-generated method
 	 *
 	 *  @return {Vector<Project>} null
          */
