@@ -1,0 +1,53 @@
+http://localhost:8080/AlinuaProg/UserSpringAction
+
+deziper le projet et :
+
+cd alinua
+mvn eclipse:eclipse
+mvn package
+
+importez le projet dans eclipse
+
+installez mysql si c'est pas déjà installé et modifiez le fichier alinua/src/main/resources/properties/application.properties
+
+le nom de la BDD que j'ai utilisé est Alinua
+
+les scripts des tables à crers pour que l'exemple fonctionne sonts :
+
+
+CREATE TABLE  `USER` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(45) NOT NULL,
+  `lastName` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `headline` varchar(45) NOT NULL,
+  `location` varchar(45) NOT NULL,
+  `industry` varchar(45) NOT NULL,
+  `pictureUrl` varchar(45) NOT NULL,
+  `jsonCV` varchar(45) NOT NULL,
+
+
+
+
+  PRIMARY KEY (`id`)
+);
+
+
+
+CREATE TABLE  `JOBADVERT` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) NOT NULL,
+  `location` varchar(45) NOT NULL,
+  `industry` varchar(45) NOT NULL,
+  `date` varchar(45) NOT NULL,
+  `skills` varchar(45) NOT NULL,
+  `description` varchar(45) NOT NULL,
+  `degree` varchar(45) NOT NULL,
+  `User_id` bigint(20) NOT NULL,
+
+
+
+
+  PRIMARY KEY (`id`)
+);

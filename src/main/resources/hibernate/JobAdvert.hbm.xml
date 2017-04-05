@@ -8,7 +8,12 @@
 		
         <id name="idJobAdvert" type="string">
             <column name="idJobAdvert" not-null="true"/>
+<!-- MERGING
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
         </id>
+-->
         
         <property name="title" type="string">
             <column name="title" not-null="true" />
@@ -24,10 +29,30 @@
         
         <property name="postDate" type="java.sql.Timestamp">
             <column name="postDate" length="45" not-null="true" />
+<!-- MERGING
+        <property name="date" type="string">
+            <column name="date" length="45" not-null="true" />
         </property>
+        
+        <property name="skills" type="string">
+            <column name="skills" length="45" not-null="true" />
+        </property>
+-->
         
         <property name="description" type="string">
             <column name="description" length="45" not-null="true" />
         </property>
+
+<!-- MERGING
+        
+        <property name="degree" type="string">
+            <column name="degree" length="45" not-null="true" />
+        </property>
+        
+        <property name="User_id" type="java.lang.Integer">
+            <column name="User_id" length="45" not-null="true" />
+        </property>
+-->
+        
     </class>
 </hibernate-mapping>

@@ -40,7 +40,7 @@
 
 
 
-<!-- 
+<!-- Message ???
 
         <property name="role">
         	<type name="EnumUserType">
@@ -70,3 +70,48 @@
 
 
  -->
+<!-- Merging
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="firstName" type="string">
+            <column name="firstName" not-null="true" />
+        </property>
+        
+        <property name="lastName" type="string">
+            <column name="lastName" length="45" not-null="true" />
+        </property>
+        
+        <property name="email" type="string">
+            <column name="email" length="45" not-null="true" />
+        </property>
+        
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        
+        <property name="headline" type="string">
+            <column name="headline" length="45" not-null="true" />
+        </property>
+        
+        <property name="location" type="string">
+            <column name="location" length="45" not-null="true" />
+        </property>
+        
+        <property name="industry" type="string">
+            <column name="industry" length="45" not-null="true" />
+        </property>
+        
+        <property name="pictureUrl" type="string">
+            <column name="pictureUrl" length="45" not-null="true" />
+        </property>
+        
+        <property name="jsonCV" type="string">
+            <column name="jsonCV" length="45" not-null="true" />
+        </property>
+        
+    </class>
+</hibernate-mapping>
+-->

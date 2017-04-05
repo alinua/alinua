@@ -59,7 +59,8 @@ public class UserAction {
 		System.out.println(id);
 			
 		User user=userDao.getUser(id);
-		/*
+		/* MERGING
+		 * Un message ?
 		System.out.println(id);
 		System.out.println(user.toString());
 		System.out.println(user.toJsonString());
@@ -86,4 +87,48 @@ public class UserAction {
 		return "success";
 	}
 
+// MERGING
+//
+//	public String addUserAction(){
+//	
+//		User user=new User();
+//		user.setEmail("mailUser");
+//		user.setFirstName("firstName");
+//		user.setHeadline("headline");
+//		user.setIndustry("industry");
+//		user.setJsonCV("jsonCV");
+//		user.setLastName("lastName");
+//		user.setLocation("location");
+//		user.setPassword("password");
+//		user.setPictureUrl("pictureUrl");
+//		
+//		userDao.addUser(user);
+//	
+//		
+//	
+//		System.out.println("User ajouté");
+//		return "success";
+//	
+//	}
+//	
+//	
+//	public String getUserAction(){
+//		int id=4;
+//		User user=userDao.getUser(id);
+//		System.out.println("User recupéré "+user.toString());		
+//		String json_str = new Gson().toJson(user);
+//		System.out.println("User recupéré json "+json_str);
+//		return "success";
+//	
+//	}
+//	
+//	public String execute() throws Exception {
+//		
+//
+//
+//		return "success";
+//
+//	}
+//
+//
 }

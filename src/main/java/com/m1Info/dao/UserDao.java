@@ -9,4 +9,9 @@ public interface UserDao {
 	
 	void addUser(User user);
 	User getUser(String id);
+	
+	// MERGING
+	//void addUser(User user);
+	//User getUser(int i);
+
 }

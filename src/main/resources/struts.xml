@@ -25,6 +25,28 @@
 			</result>
 		</action>		
 		
+<!-- MERGING
+<constant name="struts.patternMatcher" value="regex" />
+
+	
+	<package name="json" namespace="/" extends="json-default">
+	
+		<action name="getAnnonce" class="SpringAction" method="getJson">
+			<result type="json"><param name="root">annonceJson</param></result>
+		</action>
+		
+		
+		<action name="springAction" class="SpringAction">
+		</action>
+	
+		
+		<action name="AddUserAction" class="UserAction" method="addUserAction">
+		</action>
+		
+		<action name="GetUserAction" class="UserAction" method="getUserAction">
+		</action>
+		
+-->	
 		<action name="AddJobAdvertAction" class="JobAdvertAction" method="addJobAdvertAction">
 		</action>
 		
@@ -32,4 +54,33 @@
 		</action>	
 	
 	</package>
+<!-- MERGING
+		</action>
+	
+	
+	</package>
+	
+
+	
+	<package name="json2" namespace="/users" extends="json-default">
+	
+		<action name="execute2" class="SpringAction" method="execute2">
+		</action>
+		
+		
+		<action name="*" class="SpringAction" method="execute3">
+		</action>
+		
+		<action name="execute1" class="SpringAction" method="execute5">
+		</action>
+	
+	</package>
+	
+
+
+	 
+	
+
+
+-->
 </struts>

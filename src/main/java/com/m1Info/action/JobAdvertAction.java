@@ -28,6 +28,17 @@ public class JobAdvertAction {
 		jobAdvert.setIndustry("industry");
 		jobAdvert.setLocation("location");
 		jobAdvert.setTitle("title");
+		//
+		// MERGING
+		//
+		//jobAdvert.setDate("date");
+		//jobAdvert.setDegree("degree");
+		//jobAdvert.setDescription("description");
+		//jobAdvert.setIndustry("industry");
+		//jobAdvert.setLocation("location");
+		//jobAdvert.setSkills("skills");
+		//jobAdvert.setTitle("title");
+		//jobAdvert.setUser_id(1);
 		
 		jobAdvertDao.addJobAdvert(jobAdvert);
 	
