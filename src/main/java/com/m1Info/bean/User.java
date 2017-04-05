@@ -1,6 +1,12 @@
 package com.m1Info.bean;
 
 public class User  implements java.io.Serializable {
+	
+	/*
+	 * class bean for user with standar getter/setter
+	 * 
+	 */
+	
 	private int id;
 	private String firstName;
 	private String lastName;
@@ -78,6 +84,12 @@ public class User  implements java.io.Serializable {
 
 	
 	public String toString() {
+		
+		/*
+		 *  return a string representation of the instance
+		 * 
+		 * @return	string concatenation of attribute/value
+		 */
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName="
 				+ lastName + ", email=" + email + ", password=" + password
 				+ ", headline=" + headline + ", location=" + location
