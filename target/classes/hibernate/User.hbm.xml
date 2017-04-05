@@ -6,6 +6,71 @@
     <class name="com.m1Info.bean.User"
 		table="USER" catalog="Alinua">
 		
+        <id name="idLinkedIn" type="string">
+            <column name="idLinkedIn" not-null="true"/>
+        </id>
+        
+        <property name="email" type="string">
+            <column name="email" not-null="true" />
+        </property>
+
+		
+        <property name="role">
+        	<type name="org.hibernate.type.EnumType">
+        		<param name="enumClass">com.m1Info.bean.Role</param>
+        	</type>
+        </property>
+        
+
+
+		<set name="jobAdverts" cascade="all">
+			<key column="jobAdverts"/>
+			<one-to-many class="com.m1Info.bean.JobAdvert"/>
+		</set>
+		
+		
+		
+		<set name="archivedJobAdverts" cascade="all">
+			<key column="archivedJobAdverts"/>
+			<one-to-many class="com.m1Info.bean.JobAdvert"/>
+		</set>
+        
+    </class>
+</hibernate-mapping>
+
+
+
+<!-- Message ???
+
+        <property name="role">
+        	<type name="EnumUserType">
+        		<param name="enumClass">com.m1Info.bean.Role</param>
+        	</type>
+        </property>
+        
+        <property name="role">
+        	<type name="at.molindo.util.hibernate.EnumUserType">
+        		<param name="enumClass">com.m1Info.bean.Role</param>
+        	</type>
+        </property>
+        
+        
+        
+        
+		<set name="jobAdverts">
+			<key column="jobAdverts" not-null="false"/>
+			<one-to-many class="JobAdvert"/>
+		</set>
+		<set name="archivedJobAdverts">
+			<key column="archivedJobAdverts" not-null="false"/>
+			<one-to-many class="JobAdvert"/>
+		</set>
+        
+
+
+
+ -->
+<!-- Merging
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
@@ -49,3 +114,4 @@
         
     </class>
 </hibernate-mapping>
+-->

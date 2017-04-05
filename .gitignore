@@ -16,3 +16,4 @@ target/alinua.war
 .project
 .classpath
 .settings/*
+/target/
