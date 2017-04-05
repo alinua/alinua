@@ -1,0 +1,28 @@
+<div class="col-lg-12">
+    <div class="row" ng-show="$ctrl.loading">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
+        <div class="col-lg-8 col-lg-offset-2 users" ng-repeat="user in $ctrl.users | filter:$ctrl.searchText | orderBy:$ctrl.order">
+            <a href="#!/users/{{user.id}}">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2>
+                                {{user.firstName}} {{user.lastName}}
+                            </h2>
+                        </div>
+                        {{user.industry}} 
+                        <br>
+                        {{user.email}}, {{user.location}} <i class="fa fa-globe" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-body">
+                        <hr>
+                            {{user.headline}}
+                        <hr>                        
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

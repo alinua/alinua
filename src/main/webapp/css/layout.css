@@ -1,0 +1,288 @@
+/**********/
+/* NAVBAR */
+/**********/
+
+nav.navbar {
+	border-radius: 0px;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover {
+	background-color: inherit;
+}
+
+/***********/
+/* GENERAL */
+/***********/
+
+#page {
+	padding: 15px 15px 0px 15px;
+	margin-top: 35px;
+}
+
+#pageContent {
+	padding-top: 10px;
+}
+
+#pageBody {
+	min-height: 90vh;
+	padding-top: 10px;
+}
+
+#connexionActions {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.title {
+	text-align: center;
+}
+
+.img-circle {
+	border-radius: 50%;
+}
+
+.homeEntete {
+	background-color: rgb(61, 141, 210);
+	color: white;
+	padding: 0px 0px 20px;
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
+
+.homeEntete ul {
+	text-align: left;
+}
+
+.homeEntete a.closeBandeau {
+	float: right;
+	font-size: 20px;
+	right: 12px;
+	position: relative;
+	color: blue;
+	cursor: pointer;
+}
+
+.homeEntete .actionsInscription a{	
+	transition: all 0.6s ease;
+}
+
+.homeEntete a.closeBandeau:hover {
+	text-decoration: none;
+}
+
+.annonce a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+#profile {
+	position: fixed;
+	border-right: 1px solid #2b2b2b;
+	height: 100%;
+	background-color: #263949;
+	padding-top: 20px;
+}
+
+.dropdown-toggle {
+	margin-top: 10px;
+}
+
+#connexionAction {
+	margin: 20px;
+}
+
+#recherche input {
+	height: 50px;
+}
+
+/**********/
+/*  CARD  */
+/**********/
+
+.card {
+	border: 1px solid #ccc;
+	margin: 15px;
+	margin-top: 25px;
+	transition: all 0.4s;
+}
+
+.card:hover {
+	transform: scale(1.02);
+}
+
+.card .card-header {
+	text-align: center;
+	background-color: #2882ad;
+	color: #cacaca;
+	padding: 10px;
+}
+
+.card .card-header .card-title {
+	text-transform: uppercase;
+	color: white;
+}
+
+.card .card-body {
+	padding: 12px;
+	color: black;
+}
+
+.card .card-footer {
+	padding: 10px;
+	background-color: #6b6b6b;
+	color: white;
+}
+
+/****************/
+/* Menu Profile */
+/****************/
+
+.enteteProfile {
+	max-width: 150px;
+	margin: auto;
+}
+
+.profile-element {
+	color: white;
+	text-align: center;
+}
+
+.menuVertical {
+	text-align: left;
+	margin-top: 30px;
+} 
+
+.menuVertical ul {
+	list-style: none;
+	padding-left: 15px;
+}
+
+.menuVertical a {
+	text-decoration: none;
+	color: white;
+}
+
+.menuVertical a:hover {
+	color: #337aa5;
+}
+
+.part {
+	padding-bottom: 15px;
+}
+
+.profile .row {
+	height: 60px;
+}
+
+.profile .row .title {
+	margin-bottom: 50px;
+}
+
+.profile .row .center {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.profile .row .left {
+	text-align: left;
+}
+
+.profile .row .right {
+	text-align: right;
+}
+
+.profile .modal-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.profile .modal-header * {
+	width: 100%;
+}
+
+.profile .modal-header button {
+	text-align: right;
+}
+
+.profile button.synchronize {
+	padding: 10px;
+}
+
+/*****************/
+/* Switch Button */
+/*****************/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  transform: scale(0.8);
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/**********/
+/* FOOTER */
+/**********/
+
+footer {
+	text-align: center;
+	padding: 10px;
+	border-top: 1px solid #8e8e8e;
+	background-color: #ccc;
+	color: #38526d;
+	width: 100%;
+}
